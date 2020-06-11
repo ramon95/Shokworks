@@ -4,6 +4,7 @@ import "../assets/styles/pages/Home.scss";
 import City from "../assets/images/city.png";
 import Button from "../components/Button.jsx";
 import Header from "../components/Header.jsx";
+import Footer from "../components/Footer.jsx";
 import Client1 from "../assets/images/client1.png";
 import Client2 from "../assets/images/client2.png";
 import Client3 from "../assets/images/client3.png";
@@ -16,7 +17,9 @@ import CellPhone from "../assets/images/cellPhone.png";
 const Home = () => {
   return (
     <React.Fragment>
+      {/* Componet header */}
       <Header />
+      {/* componet cellphone*/}
       <div className="cellphone">
         <img src={CellPhone} alt="Cell Phone" />
         <div className="title">
@@ -27,6 +30,7 @@ const Home = () => {
           <Button message="Know More" />
         </div>
       </div>
+      {/* component box_dobles */}
       <div className="box_doble">
         <div className="info left">
           <div className="title">
@@ -45,6 +49,7 @@ const Home = () => {
         </div>
         <img src={City} alt="City" />
       </div>
+      {/* component box_dobles */}
       <div className="box_doble">
         <img src={Security} alt="Red security" />
         <div className="info right">
@@ -61,6 +66,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      {/* component clients */}
       <div className="clients">
         <h1>Our Partnes & Clients</h1>
         <div className="cards">
@@ -72,6 +78,7 @@ const Home = () => {
           <Card img={Client6} title="GOOD TIMES" />
         </div>
       </div>
+      {/* component form */}
       <div className="form__container">
         <div className="title">
           <h1>Facing Problem?</h1>
@@ -114,6 +121,8 @@ const Home = () => {
           </div>
         </div>
       </div>
+      {/* component footer */}
+      <Footer />
     </React.Fragment>
   );
 };

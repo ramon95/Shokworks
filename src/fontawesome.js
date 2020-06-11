@@ -1,6 +1,10 @@
 // import the library
 import { library } from "@fortawesome/fontawesome-svg-core";
 
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+//fas
+import { faSearch, faMobileAlt } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faSearch);
+//far
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+
+library.add(faSearch, faMobileAlt, faEnvelope);

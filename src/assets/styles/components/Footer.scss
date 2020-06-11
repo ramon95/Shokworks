@@ -1,0 +1,62 @@
+@import "../Vars.scss";
+
+.logo {
+  margin-top: vw(119.2, 1920);
+  margin-bottom: vw(94.49, 1920);
+  @include flex($justify: center);
+  img {
+    width: vw(484.25, 1920);
+    height: (40.59, 1920);
+  }
+}
+.container {
+  margin: 0 vw(300, 1920);
+  @include flex($justify: space-around);
+  .info {
+    p {
+      color: #101c21;
+      font-family: $Poppins;
+      font-weight: $Medium;
+      font-size: vw(18, 1920);
+      margin-bottom: vw(40, 1920);
+    }
+    ul {
+      li {
+        list-style: none;
+        font-family: $Poppins;
+        font-weight: $Regular;
+        font-size: vw(15, 1920);
+        color: #777777;
+        margin-bottom: vw(38, 1920);
+        svg {
+          margin-right: vw(19, 1920);
+          color: #9d60eb;
+        }
+      }
+    }
+  }
+  .double {
+    .info {
+      .text {
+        font-size: vw(13, 1920);
+        color: #777777;
+        width: vw(280, 1920);
+        height: vw(51, 1920);
+      }
+      .social {
+        img {
+          width: vw(49, 1920);
+          height: vw(48, 1920);
+          margin-right: vw(38, 1920);
+        }
+      }
+    }
+  }
+}
+
+.fondo {
+  width: 100%;
+  background: url(../../images/footer.png);
+  height: vw(320.6, 1920);
+  margin-top: vw(-100, 1920);
+}
