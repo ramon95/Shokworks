@@ -76,6 +76,7 @@ body {
     }
   }
 }
+
 .clients {
   margin-top: vw(70, 1920);
   @include flex($direction: column, $align: center, $justify: center);
@@ -91,5 +92,92 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 33.33%);
     grid-template-rows: repeat(2, 50%);
+  }
+}
+
+.form__container {
+  @include flex($direction: column, $align: center, $justify: center);
+  margin-top: vw(80, 1920);
+  height: vw(1086, 1920);
+  background: url(../../images/fondoCuadros.png),
+    url(../../images/formCell.png) right bottom/vw(600, 1920) vw(500, 1920)
+      no-repeat,
+    url(../../images/formAirplane.png) vw(1005, 1920) vw(260, 1920) no-repeat,
+    url(../../images/Rectangle.png);
+  .title {
+    margin-bottom: vw(47, 1920);
+    h1 {
+      text-align: center;
+      font-family: $Montserrat;
+      font-size: vw(43, 1920);
+      line-height: vw(55, 1920);
+      font-weight: $Regular;
+    }
+  }
+  .form {
+    height: vw(784, 1920);
+    width: vw(929, 1920);
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 20px 60px #3e3e3e29;
+    border-radius: 8px;
+    opacity: 1;
+    margin: 0 vw(754, 1920) vw(71, 1920) vw(187, 1920);
+    padding: vw(72, 1920) vw(61.7, 1920) vw(74.4, 1920) vw(63, 1920);
+    .input_double {
+      width: 100%;
+      @include flex();
+      .group {
+        width: 50%;
+        &:nth-child(1) {
+          margin-right: vw(15, 1920);
+        }
+        &:nth-child(1) {
+          margin-left: (15, 1920);
+        }
+      }
+    }
+    .group {
+      width: 100%;
+      @include flex($direction: column);
+      label {
+        font-family: $Poppins;
+        font-size: vw(20, 1920);
+        font-weight: $Regular;
+        color: #222222;
+        margin-top: vw(50, 1920);
+        margin-bottom: vw(20, 1920);
+      }
+      input,
+      select,
+      textarea {
+        border: none;
+        border-bottom: 1px solid #e5e5e5;
+        color: #c2c2c2;
+        background: transparent;
+        padding-bottom: vw(23, 1920);
+        &:hover,
+        &:focus,
+        &:active {
+          outline: none;
+        }
+        &::placeholder {
+          color: #c2c2c2;
+        }
+      }
+      textarea {
+        resize: none;
+      }
+    }
+    .button {
+      margin-top: vw(30, 1920);
+      button {
+        &:hover::after {
+          content: "Know More";
+        }
+        &:hover .message {
+          display: none;
+        }
+      }
+    }
   }
 }

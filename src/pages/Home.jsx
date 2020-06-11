@@ -72,6 +72,48 @@ const Home = () => {
           <Card img={Client6} title="GOOD TIMES" />
         </div>
       </div>
+      <div className="form__container">
+        <div className="title">
+          <h1>Facing Problem?</h1>
+          <h1>
+            <strong>Lets Get In Touch Now</strong>
+          </h1>
+        </div>
+        <div className="form">
+          <div className="input_double">
+            <div className="group">
+              <label>First Name</label>
+              <input type="text" placeholder="Robert Lee" />
+            </div>
+            <div className="group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Anderson" />
+            </div>
+          </div>
+          <div className="group">
+            <label>Your Email Adress</label>
+            <input type="email" placeholder="kevin.jones@gmail.com" />
+          </div>
+          <div className="group">
+            <label>Which Related Problem You Are Facing?</label>
+            <select>
+              <option disabled selected>
+                Select One
+              </option>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+            </select>
+          </div>
+          <div className="group">
+            <label>Type Your Message</label>
+            <textarea rows="3" placeholder="Here goes your message"></textarea>
+          </div>
+          <div className="button">
+            <Button message="Our Works" />
+          </div>
+        </div>
+      </div>
     </React.Fragment>
   );
 };

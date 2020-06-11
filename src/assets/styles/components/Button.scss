@@ -14,11 +14,18 @@ button {
   line-height: vw(26, 1920);
   height: vw(50, 1920);
   width: vw(169, 1920);
+  cursor: pointer;
+  transition: all 0.8s ease;
   &.active,
   &:hover {
     background: linear-gradient(248deg, #1b92c8 0%, #2c3636 100%) 0% 0%
       no-repeat padding-box;
     color: white;
     border: none;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
   }
 }
