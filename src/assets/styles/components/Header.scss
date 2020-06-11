@@ -1,0 +1,84 @@
+@import "../Vars.scss";
+
+header {
+  @include flex($justify: space-around);
+  padding: 0 vw(245, 1920) 0 vw(30, 1920);
+  margin-top: vw(37, 1920);
+  .logo {
+    width: vw(331, 1920);
+    img {
+      width: 100%;
+    }
+  }
+  nav {
+    padding-top: vw(5, 1920);
+  }
+  ul {
+    display: flex;
+    margin: 0;
+    li {
+      @include flex($direction: column, $align: center);
+      list-style: none;
+      margin-right: 24px;
+      font-family: $Poppins;
+      font-weight: $Regular;
+      font-size: vw(17, 1920);
+      line-height: vw(26, 1920);
+      &::after {
+        margin-top: vw(4, 1920);
+        content: "";
+        // background: #185f7f;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+      }
+      &:hover {
+        font-weight: $Medium;
+        color: #185f7f;
+        &::after {
+          background: #185f7f;
+        }
+      }
+    }
+    .active {
+      font-weight: $Medium;
+      color: #185f7f;
+      &::after {
+        background: #185f7f;
+      }
+    }
+  }
+  .seach__box__container {
+    width: vw(326, 1920);
+    position: relative;
+    input#search {
+      width: 100%;
+      height: vw(40, 1920);
+      border: 1px solid #c6baf8;
+      border-radius: 4px;
+      font-size: vw(14, 1920);
+      float: left;
+      color: white;
+      padding-left: vw(21, 1920);
+      &::placeholder {
+        color: #cccccc;
+      }
+      &:hover,
+      &:focus,
+      &:active {
+        outline: none;
+      }
+    }
+    .serach__box__icon {
+      position: absolute;
+      top: vw(10, 1920);
+      left: vw(280, 1920);
+      z-index: 1;
+      color: #c6baf8;
+    }
+  }
+  .button {
+    height: vw(45, 1920);
+    width: vw(169, 1920);
+  }
+}

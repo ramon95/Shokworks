@@ -1,0 +1,56 @@
+// @import "~bootstrap/scss/bootstrap";
+
+//Media querys
+$escritorio_gra: 1920px;
+$escritorio_med: 1440px;
+$escritorio_peq: 900px;
+$movil_gra: 720px;
+$movil_med: 375px;
+$movil_peq: 300px;
+
+// Mixins
+@mixin flex(
+  $direction: null,
+  $align: null,
+  $justify: null,
+  $wrap: null,
+  $flow: null
+) {
+  display: flex;
+  @if $direction {
+    flex-direction: $direction;
+  }
+  @if $align {
+    align-items: $align;
+  }
+  @if $justify {
+    justify-content: $justify;
+  }
+  @if $wrap {
+    flex-wrap: $wrap;
+  }
+  @if $flow {
+    flex-flow: $flow;
+  }
+}
+
+//Functions
+@function opacity($color: #000, $opacity: 0.5) {
+  @return rgba($color, $opacity);
+}
+
+@function em($pixels, $context: 16) {
+  @return #{$pixels/$context}em;
+}
+
+@function vw($pixels, $context: 1920) {
+  @return ($pixels / $context) * 100vw;
+}
+
+//Fuentes
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Poppins:wght@400;500;600&display=swap");
+$Montserrat: "Montserrat", sans-serif;
+$Poppins: "Poppins", sans-serif;
+$Regular: 400;
+$Medium: 500;
+$Semi-bold: 600;
