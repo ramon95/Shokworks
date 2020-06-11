@@ -1,5 +1,3 @@
-// @import "~bootstrap/scss/bootstrap";
-
 //Media querys
 $escritorio_gra: 1920px;
 $escritorio_med: 1440px;
@@ -8,7 +6,7 @@ $movil_gra: 720px;
 $movil_med: 375px;
 $movil_peq: 300px;
 
-// Mixins
+// Mixin para flex
 @mixin flex(
   $direction: null,
   $align: null,
@@ -37,10 +35,6 @@ $movil_peq: 300px;
 //Functions
 @function opacity($color: #000, $opacity: 0.5) {
   @return rgba($color, $opacity);
-}
-
-@function em($pixels, $context: 16) {
-  @return #{$pixels/$context}em;
 }
 
 @function vw($pixels, $context: 1920) {

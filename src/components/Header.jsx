@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Header = () => {
   return (
     <header>
-      <div className="logo">
+      <div className="header__logo">
         <img src={Logo} alt="SHOKWORKS" />
       </div>
       <div className="nav">

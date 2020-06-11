@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Card from "../components/Card.jsx";
 import "../assets/styles/pages/Home.scss";
 import City from "../assets/images/city.png";
@@ -13,8 +13,51 @@ import Client5 from "../assets/images/client5.png";
 import Client6 from "../assets/images/client6.png";
 import Security from "../assets/images/secuirty.png";
 import CellPhone from "../assets/images/cellPhone.png";
+import Carousel from "../components/Carousel.jsx";
+import Fetch from "../Api/Fetch";
+import NotFound from "./Error.jsx";
+import Loading from "./pageLoding";
 
 const Home = () => {
+  let [state, setState] = useState({
+    loading: true,
+    error: null,
+    items: [],
+  });
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    // type, endpoint, body
+    const [response, error] = await Fetch(
+      "GET",
+      "http://newsapi.org/v2/everything?q=bitcoin&from=2020-05-11&sortBy=publishedAt&apiKey=fdb647bffc1943cab06868ba0a927a40",
+      null
+    );
+    if (!error) {
+      setState({
+        ...state,
+        loading: false,
+        items: response.articles,
+      });
+    } else {
+      setState({
+        ...state,
+        loading: false,
+        error: error,
+      });
+    }
+  };
+
+  if (state.error) {
+    return <NotFound title="500" error={state.error.message} />;
+  }
+
+  if (state.loading) {
+    return <Loading />;
+  }
   return (
     <React.Fragment>
       {/* Componet header */}
@@ -66,6 +109,12 @@ const Home = () => {
           </div>
         </div>
       </div>
+      {/* component Speciality */}
+      <div className="speciality__title">
+        <h1 className="Regular">What is the </h1>
+        <h1 className="SemiBold">Speciality Of Us?</h1>
+      </div>
+      <Carousel items={state.items} active={0} />
       {/* component clients */}
       <div className="clients">
         <h1>Our Partnes & Clients</h1>
@@ -104,12 +153,10 @@ const Home = () => {
           <div className="group">
             <label>Which Related Problem You Are Facing?</label>
             <select>
-              <option disabled selected>
-                Select One
-              </option>
-              <option value="1">Option 1</option>
-              <option value="2">Option 2</option>
-              <option value="3">Option 3</option>
+              <option>Select One</option>
+              <option defaultValue="1">Option 1</option>
+              <option defaultValue="2">Option 2</option>
+              <option defaultValue="3">Option 3</option>
             </select>
           </div>
           <div className="group">

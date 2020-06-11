@@ -1,0 +1,218 @@
+@import "../Vars.scss";
+
+$level2-height: vw(460, 1920);
+$level2-width: vw(400, 1920);
+$level1-height: vw(500, 1920);
+$level1-width: vw(400, 1920);
+$level0-height: vw(500, 1920);
+$level0-width: vw(400, 1920);
+
+$level-2-left: vw(1700, 1920);
+$level-1-left: calc(100% - 34vw);
+$level0-left: calc(100% - 58vw);
+$level1-left: calc(100% - 82vw);
+$level2-left: -7vw;
+
+.carousel__container {
+  position: relative;
+  height: vw(580, 1920);
+  margin-bottom: vw(80, 1920);
+}
+
+#carousel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.arrow {
+  position: absolute;
+  width: vw(40, 1920);
+  height: vw(40, 1920);
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 10px 30px #99999933;
+  text-align: center;
+  font-size: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: vw(15, 1920);
+  color: #000000;
+  line-height: vw(40, 1920);
+  z-index: 1000;
+  bottom: 0;
+}
+
+.arrow-left {
+  right: calc(100% - 51vw);
+}
+
+.arrow-right {
+  left: calc(100% - 47vw);
+}
+
+.item {
+  display: grid;
+  grid-template-rows: 60% 20% 10% 10%;
+  text-align: center;
+  font-size: 40px;
+  position: absolute;
+  transition: height 1s, width 1s, left 1s, margin-top 1s, line-height 1s,
+    background-color 1s;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 10px 30px #99999933;
+  border-radius: 8px;
+  img {
+    margin: 0 auto;
+    margin-top: vw(22, 1920);
+    width: vw(250, 1920);
+    height: vw(250, 1920);
+    border-radius: 50%;
+  }
+  .item__title {
+    padding: 0 vw(50, 1920);
+    font-family: $Poppins;
+    font-size: 24px;
+    font-weight: $Semi_bold;
+    margin-top: vw(20, 1920);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+  }
+  .item__descripcion,
+  p {
+    text-align: center;
+    font-family: $Poppins;
+    font-weight: $Regular;
+    font-size: vw(15, 1920);
+  }
+  .more {
+    color: #1b92c8;
+  }
+  .item__descripcion {
+    color: #555555;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 0 vw(10, 1920);
+    height: 40px;
+  }
+}
+
+.level-2 {
+  height: $level2-height;
+  width: $level2-width;
+  left: $level-2-left;
+  margin-top: 25px;
+}
+
+.level-1 {
+  height: $level1-height;
+  width: $level1-width;
+  left: $level-1-left;
+  margin-top: 8px;
+}
+
+.level0 {
+  height: $level0-height;
+  width: $level0-width;
+  left: $level0-left;
+  margin-top: 8px;
+}
+
+.level1 {
+  height: $level1-height;
+  width: $level1-width;
+  margin-top: 8px;
+  left: $level1-left;
+}
+
+.level2 {
+  height: $level2-height;
+  width: $level2-width;
+  margin-top: 25px;
+  left: $level2-left;
+}
+
+.left-enter {
+  opacity: 0;
+  left: $level2-left - $level2-width;
+  height: $level2-height - 30;
+  width: $level2-width - 20;
+  margin-top: 40px;
+}
+
+.left-enter.left-enter-active {
+  opacity: 1;
+  left: $level2-left;
+  height: $level2-height;
+  width: $level2-width;
+  margin-top: 25px;
+  transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s,
+    line-height 1s;
+}
+
+.left-leave {
+  opacity: 1;
+  left: $level-2-left;
+  height: $level2-height;
+  width: $level2-width;
+  margin-top: 25px;
+}
+
+.left-leave.left-leave-active {
+  left: $level-2-left + $level2-width + 20;
+  opacity: 0;
+  height: $level2-height - 30;
+  margin-top: 40px;
+  width: $level2-width - 20;
+  transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s,
+    line-height 1s;
+}
+
+.right-enter {
+  opacity: 0;
+  left: $level-2-left + $level2-width;
+  height: $level2-height - 30;
+  width: $level2-width - 20;
+  margin-top: 40px;
+}
+
+.right-enter.right-enter-active {
+  left: $level-2-left;
+  opacity: 1;
+  height: $level2-height;
+  margin-top: 25px;
+  width: $level2-width;
+  transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s,
+    line-height 1s;
+}
+
+.right-leave {
+  left: $level2-left;
+  height: $level2-height;
+  opacity: 1;
+  margin-top: 25px;
+  width: $level2-width;
+}
+
+.right-leave.right-leave-active {
+  left: $level2-left - $level2-width;
+  opacity: 0;
+  height: $level2-height - 30;
+  width: $level2-width - 20;
+  margin-top: 40px;
+  transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s,
+    line-height 1s;
+}
+
+.noselect {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

@@ -4,7 +4,7 @@ header {
   @include flex($justify: space-around);
   padding: 0 vw(145, 1920) 0 vw(150, 1920);
   margin-top: vw(37, 1920);
-  .logo {
+  .header__logo {
     width: vw(331, 1920);
     img {
       width: 100%;
