@@ -2,7 +2,7 @@
 
 header {
   @include flex($justify: space-around);
-  padding: 0 vw(245, 1920) 0 vw(30, 1920);
+  padding: 0 vw(145, 1920) 0 vw(150, 1920);
   margin-top: vw(37, 1920);
   .logo {
     width: vw(331, 1920);
@@ -76,9 +76,5 @@ header {
       z-index: 1;
       color: #c6baf8;
     }
-  }
-  .button {
-    height: vw(45, 1920);
-    width: vw(169, 1920);
   }
 }

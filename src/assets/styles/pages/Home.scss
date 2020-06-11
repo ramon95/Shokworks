@@ -1,3 +1,4 @@
+@import "../Vars.scss";
 * {
   margin: 0;
   padding: 0;
@@ -6,4 +7,30 @@
 
 body {
   max-width: 1920px;
+}
+
+.cellphone {
+  width: 100%;
+  height: vw(764.75, 1920);
+  background: url("../../images/fondoCuadros.png");
+  background-size: cover;
+  @include flex($direction: column, $align: center);
+  margin: vw(145, 1920) 0 0 0;
+  img {
+    height: vw(450, 1920);
+  }
+  .title {
+    margin-top: vw(40, 1920);
+    margin-bottom: vw(40, 1920);
+    h1 {
+      font-size: vw(50, 1920);
+      font-family: $Poppins;
+    }
+  }
+  .buttons {
+    @include flex();
+    button {
+      margin-left: vw(46, 1920);
+    }
+  }
 }

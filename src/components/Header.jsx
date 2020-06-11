@@ -31,7 +31,7 @@ const Header = () => {
         </div>
       </div>
       <div className="button">
-        <Button message="Constas Us" />
+        <Button message="Constas Us" active="active" />
       </div>
     </header>
   );

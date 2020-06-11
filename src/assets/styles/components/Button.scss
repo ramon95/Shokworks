@@ -3,14 +3,22 @@
 button {
   width: 100%;
   height: 100%;
-  background: linear-gradient(248deg, #1b92c8 0%, #2c3636 100%) 0% 0% no-repeat
-    padding-box;
-  color: white;
+  background: white;
+  color: #185f7f;
   border-radius: 5px;
   outline: none;
-  border: none;
+  border: 1px solid #185f7f;
   font-family: $Poppins;
   font-weight: $Medium;
   font-size: vw(17, 1920);
   line-height: vw(26, 1920);
+  height: vw(50, 1920);
+  width: vw(169, 1920);
+  &.active,
+  &:hover {
+    background: linear-gradient(248deg, #1b92c8 0%, #2c3636 100%) 0% 0%
+      no-repeat padding-box;
+    color: white;
+    border: none;
+  }
 }
