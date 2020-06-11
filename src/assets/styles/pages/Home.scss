@@ -25,6 +25,8 @@ body {
     h1 {
       font-size: vw(50, 1920);
       font-family: $Poppins;
+      width: vw(500, 1920);
+      text-align: center;
     }
   }
   .buttons {
@@ -32,5 +34,62 @@ body {
     button {
       margin-left: vw(46, 1920);
     }
+  }
+}
+
+.box_doble {
+  background: url("../../images/fondoCuadros.png");
+  background-size: cover;
+  @include flex($align: center);
+  padding: vw(30, 1920) vw(200, 1920) 0 vw(260, 1920);
+  .info {
+    .title {
+      width: vw(400, 1920);
+      padding-bottom: vw(30, 1920);
+      h1 {
+        font-family: $Montserrat;
+        font-weight: $Regular;
+        font-size: vw(43, 1920);
+      }
+    }
+  }
+  .left {
+    margin-bottom: vw(110, 1920);
+    margin-right: vw(150, 1920);
+    .text {
+      width: vw(550, 1920);
+      padding-bottom: vw(40, 1920);
+      p {
+        font-family: $Poppins;
+        font-weight: $Regular;
+        font-size: vw(14, 1920);
+      }
+    }
+  }
+  .right {
+    margin-left: vw(130, 1920);
+    .text {
+      width: vw(550, 1920);
+      font-family: $Poppins;
+      font-weight: $Regular;
+      font-size: vw(18, 1920);
+    }
+  }
+}
+.clients {
+  margin-top: vw(70, 1920);
+  @include flex($direction: column, $align: center, $justify: center);
+  h1 {
+    margin-bottom: vw(80, 1920);
+    color: #222222;
+    font-family: $Montserrat;
+    font-weight: $Semi_bold;
+    font-size: vw(43, 1920);
+    line-height: vw(55, 1920);
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 33.33%);
+    grid-template-rows: repeat(2, 50%);
   }
 }
