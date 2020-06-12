@@ -100,6 +100,8 @@ body {
     font-weight: $Semi_bold;
   }
 }
+
+// Styles clients say
 .clients_say__title {
   margin-bottom: 0;
   h1 {
@@ -126,6 +128,7 @@ body {
   }
 }
 
+//Style form
 .form__container {
   @include flex($direction: column, $align: center, $justify: center);
   margin-top: vw(80, 1920);
@@ -163,7 +166,7 @@ body {
           margin-right: vw(15, 1920);
         }
         &:nth-child(1) {
-          margin-left: (15, 1920);
+          margin-left: vw(15, 1920);
         }
       }
     }
@@ -207,6 +210,83 @@ body {
         }
         &:hover .message {
           display: none;
+        }
+      }
+    }
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------Media Query-----------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------
+@media (max-width: $escritorio_med) {
+  .form__container {
+    .form {
+      padding-top: vw(40, 1920);
+    }
+  }
+}
+
+@media (max-width: $escritorio_peq) {
+  .cellphone {
+    margin-top: vw(40, 1920);
+  }
+
+  .box_doble {
+    @include flex($direction: column);
+    margin-top: vw(50, 1920);
+    .info {
+      margin: 0;
+      .title {
+        width: 100%;
+        h1 {
+          font-size: vw(80, 1920);
+        }
+      }
+      .text {
+        width: 100%;
+        p {
+          font-size: vw(35, 1920);
+        }
+      }
+    }
+  }
+
+  .speciality__title {
+    margin-top: vw(100, 1920);
+  }
+
+  .form__container {
+    .form {
+      padding-top: 0;
+      padding-bottom: 0;
+      height: vw(900, 1920);
+    }
+  }
+}
+
+@media (max-width: $movil_gra) {
+  .clients {
+    height: vw(1200, 1920);
+  }
+  .form__container {
+    height: vw(1400, 1920);
+    .form {
+      padding-top: 0;
+      padding-bottom: 0;
+      height: vw(1100, 1920);
+      margin: 0;
+      width: 80%;
+      .input_double {
+        display: initial;
+        .group {
+          width: 100%;
+          &:nth-child(1) {
+            margin-right: 0;
+          }
+          &:nth-child(1) {
+            margin-left: 0;
+          }
         }
       }
     }

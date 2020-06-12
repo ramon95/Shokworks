@@ -32,7 +32,6 @@ $level2-left: -7vw;
       background: #ffffff 0% 0% no-repeat padding-box;
       box-shadow: 0px 10px 30px #99999933;
       text-align: center;
-      font-size: 25px;
       border-radius: 50%;
       cursor: pointer;
       font-size: vw(15, 1920);
@@ -213,6 +212,43 @@ $level2-left: -7vw;
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none;
+    }
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------Media Query-----------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------
+@media (max-width: $escritorio_peq) {
+  .carousel__container {
+    height: vw(1000, 1920);
+    #carousel {
+      .arrow {
+        font-size: vw(50, 1920);
+        bottom: 15px;
+      }
+      .level-2,
+      .level-1,
+      .level1,
+      .level2 {
+        display: none;
+      }
+      .item {
+        width: 60%;
+        height: vw(800, 1920);
+        left: calc(100% - 80vw);
+        img {
+          height: 80%;
+          width: 30%;
+        }
+        .item__descripcion {
+          font-size: vw(25, 1920);
+          height: vw(70, 1920);
+        }
+        .more {
+          font-size: vw(25, 1920);
+        }
+      }
     }
   }
 }
