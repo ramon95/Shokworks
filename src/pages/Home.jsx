@@ -39,13 +39,14 @@ const Home = () => {
   }, []);
 
   const fetchData = async () => {
-    // type, endpoint, body
+    // type, endpoint, body Api de noticias
     const [response, error] = await Fetch(
       "GET",
       "http://newsapi.org/v2/everything?q=bitcoin&from=2020-05-12&sortBy=publishedAt&apiKey=fdb647bffc1943cab06868ba0a927a40",
       null
     );
 
+    // type, endpoint, body Api de Clientes
     const [response2, error2] = await Fetch(
       "GET",
       "https://jsonplaceholder.typicode.com/posts",
