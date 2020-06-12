@@ -269,6 +269,11 @@ body {
   .clients {
     height: vw(1200, 1920);
   }
+
+  .clients_say__title {
+    display: none;
+  }
+
   .form__container {
     height: vw(1400, 1920);
     .form {
@@ -289,6 +294,64 @@ body {
           }
         }
       }
+    }
+  }
+}
+
+@media (max-width: $movil_med) {
+  .cellphone {
+    height: vw(1100, 1920);
+    img {
+      height: vw(750, 1920);
+    }
+  }
+
+  .box_doble {
+    img {
+      width: 100%;
+    }
+    .info {
+      .text {
+        p {
+          font-size: vw(50, 1920);
+        }
+      }
+    }
+  }
+
+  .form__container {
+    height: vw(1900, 1920);
+    .title {
+      h1 {
+        font-size: vw(60, 1920);
+      }
+    }
+    .form {
+      height: vw(1600, 1920);
+      .group {
+        label {
+          font-size: vw(40, 1920);
+        }
+        input,
+        select,
+        textarea {
+          &::placeholder {
+            font-size: vw(45, 1920);
+          }
+        }
+      }
+      .button {
+        margin-top: vw(80, 1920);
+      }
+    }
+  }
+}
+
+@media (max-width: $movil_peq) {
+  .form__container {
+    height: vw(2200, 1920);
+    .form {
+      height: vw(1900, 1920);
     }
   }
 }

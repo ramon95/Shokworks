@@ -6,7 +6,7 @@
   @include flex($justify: center);
   img {
     width: vw(484.25, 1920);
-    height: (40.59, 1920);
+    height: vw(40.59, 1920);
   }
 }
 .container {
@@ -96,5 +96,11 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: $movil_med) {
+  .container {
+    display: none;
   }
 }

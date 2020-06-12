@@ -101,3 +101,13 @@ header {
     }
   }
 }
+
+@media (max-width: $movil_med) {
+  header {
+    ul {
+      li {
+        font-size: vw(40, 1920);
+      }
+    }
+  }
+}

@@ -46,3 +46,11 @@ button {
     font-size: vw(28, 1920);
   }
 }
+
+@media (max-width: $movil_med) {
+  button {
+    width: vw(400, 1920);
+    height: vw(110, 1920);
+    font-size: vw(38, 1920);
+  }
+}

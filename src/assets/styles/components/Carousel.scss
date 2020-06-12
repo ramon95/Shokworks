@@ -252,3 +252,40 @@ $level2-left: -7vw;
     }
   }
 }
+
+@media (max-width: $movil_peq) {
+  .carousel__container {
+    height: vw(1500, 1920);
+    #carousel {
+      .arrow {
+        font-size: vw(90, 1920);
+      }
+      .arrow-left {
+        right: calc(100% - 45vw);
+      }
+      .arrow-right {
+        left: calc(100% - 47vw);
+      }
+      .item {
+        width: 80%;
+        height: vw(1200, 1920);
+        left: calc(100% - 90vw);
+        grid-template-rows: 50% 20% 20% 10%;
+        img {
+          height: 90%;
+          width: 40%;
+        }
+        .item__title {
+          font-size: vw(90, 1920);
+        }
+        .item__descripcion {
+          font-size: vw(50, 1920);
+          height: 100%;
+        }
+        .more {
+          font-size: vw(60, 1920);
+        }
+      }
+    }
+  }
+}

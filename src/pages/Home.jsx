@@ -42,7 +42,7 @@ const Home = () => {
     // type, endpoint, body
     const [response, error] = await Fetch(
       "GET",
-      "http://newsapi.org/v2/everything?q=bitcoin&from=2020-05-11&sortBy=publishedAt&apiKey=fdb647bffc1943cab06868ba0a927a40",
+      "http://newsapi.org/v2/everything?q=bitcoin&from=2020-05-12&sortBy=publishedAt&apiKey=fdb647bffc1943cab06868ba0a927a40",
       null
     );
 

@@ -255,3 +255,9 @@ $level2-left: calc(100% - 95vw);
     }
   }
 }
+
+@media (max-width: $movil_med) {
+  .carousel__container2 {
+    display: none;
+  }
+}
