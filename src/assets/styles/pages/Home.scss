@@ -80,7 +80,8 @@ body {
 }
 
 // Style carousel speciality
-.speciality__title {
+.speciality__title,
+.clients_say__title {
   margin-top: vw(50, 1920);
   margin-bottom: vw(20, 1920);
   @include flex($direction: column, $align: center);
@@ -99,10 +100,13 @@ body {
     font-weight: $Semi_bold;
   }
 }
-.carousel__speciality {
-  height: vw(1060, 1920);
+.clients_say__title {
+  margin-bottom: 0;
+  h1 {
+    font-weight: $Regular;
+    width: vw(550, 1920);
+  }
 }
-
 // Style clientes
 .clients {
   margin-top: vw(70, 1920);

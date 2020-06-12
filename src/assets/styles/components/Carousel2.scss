@@ -4,18 +4,18 @@ $level2-height: vw(460, 1920);
 $level2-width: vw(400, 1920);
 $level1-height: vw(500, 1920);
 $level1-width: vw(400, 1920);
-$level0-height: vw(500, 1920);
-$level0-width: vw(400, 1920);
+$level0-height: vw(530, 1920);
+$level0-width: vw(800, 1920);
 
-$level-2-left: vw(1700, 1920);
-$level-1-left: calc(100% - 34vw);
-$level0-left: calc(100% - 58vw);
-$level1-left: calc(100% - 82vw);
-$level2-left: -7vw;
+$level-2-left: calc(100% - 10vw);
+$level-1-left: calc(100% - 20vw);
+$level0-left: calc(100% - 70vw);
+$level1-left: calc(100% - 85vw);
+$level2-left: calc(100% - 95vw);
 
-.carousel__container {
+.carousel__container2 {
   position: relative;
-  height: vw(580, 1920);
+  height: vw(600, 1920);
   margin-bottom: vw(80, 1920);
   #carousel {
     position: absolute;
@@ -29,8 +29,6 @@ $level2-left: -7vw;
       position: absolute;
       width: vw(40, 1920);
       height: vw(40, 1920);
-      background: #ffffff 0% 0% no-repeat padding-box;
-      box-shadow: 0px 10px 30px #99999933;
       text-align: center;
       font-size: 25px;
       border-radius: 50%;
@@ -42,27 +40,52 @@ $level2-left: -7vw;
       bottom: 0;
     }
     .arrow-left {
-      right: calc(100% - 51vw);
+      right: calc(100% - 48vw);
     }
     .arrow-right {
-      left: calc(100% - 47vw);
+      left: calc(100% - 49vw);
     }
     .item {
       display: grid;
-      grid-template-rows: 60% 20% 10% 10%;
+      grid-template-rows: 40% 60%;
       text-align: center;
       font-size: 40px;
       position: absolute;
       transition: height 1s, width 1s, left 1s, margin-top 1s, line-height 1s,
         background-color 1s;
-      background: #ffffff 0% 0% no-repeat padding-box;
-      box-shadow: 0px 10px 30px #99999933;
       border-radius: 8px;
+      .info {
+        display: grid;
+        grid-template-rows: 60% 20% 20%;
+        .quole {
+          margin-top: vw(30, 1920);
+          display: flex;
+          justify-content: space-around;
+          .text {
+            width: vw(600, 1920);
+            font-family: $Montserrat;
+            font-size: vw(24, 1920);
+            font-weight: $Regular;
+            color: #333333;
+          }
+          .titel {
+            font-family: $Montserrat;
+            font-size: vw(19, 1920);
+            font-weight: $Medium;
+            color: #222222;
+          }
+          .position {
+            font-family: $Montserrat;
+            font-size: vw(17, 1920);
+            font-weight: $Regular;
+            color: #222222;
+          }
+        }
+      }
       img {
         margin: 0 auto;
-        margin-top: vw(22, 1920);
-        width: vw(250, 1920);
-        height: vw(250, 1920);
+        width: vw(190, 1920);
+        height: vw(192, 1920);
         border-radius: 50%;
       }
       .item__title {
@@ -95,60 +118,79 @@ $level2-left: -7vw;
       }
     }
     .level-2 {
-      height: $level2-height;
-      width: $level2-width;
+      height: vw(80, 1920);
+      width: vw(80, 1920);
       left: $level-2-left;
-      margin-top: 25px;
+      bottom: vw(180, 1920);
       img {
-        filter: blur(6px);
+        width: vw(74, 1920);
+        height: vw(76, 1920);
+      }
+      .info {
+        display: none;
       }
     }
 
     .level-1 {
-      height: $level1-height;
-      width: $level1-width;
+      height: vw(120, 1920);
+      width: vw(120, 1920);
       left: $level-1-left;
-      margin-top: 8px;
+      top: vw(60, 1920);
+      img {
+        width: vw(113, 1920);
+        height: vw(116, 1920);
+      }
+      .info {
+        display: none;
+      }
     }
 
     .level0 {
       height: $level0-height;
       width: $level0-width;
       left: $level0-left;
-      margin-top: 8px;
+      z-index: 9999999;
     }
 
     .level1 {
-      height: $level1-height;
-      width: $level1-width;
-      margin-top: 8px;
+      height: vw(115, 1920);
+      width: vw(115, 1920);
       left: $level1-left;
+      bottom: vw(80, 1920);
+      img {
+        width: vw(112, 1920);
+        height: vw(114, 1920);
+      }
+      .info {
+        display: none;
+      }
     }
 
     .level2 {
-      height: $level2-height;
-      width: $level2-width;
-      margin-top: 25px;
+      height: vw(80, 1920);
+      width: vw(80, 1920);
       left: $level2-left;
+      top: vw(140, 1920);
       img {
-        filter: blur(6px);
+        width: vw(74, 1920);
+        height: vw(76, 1920);
+      }
+      .info {
+        display: none;
       }
     }
 
     .left-enter {
       opacity: 0;
       left: $level2-left - $level2-width;
-      height: $level2-height - 30;
-      width: $level2-width - 20;
-      margin-top: 40px;
+      .info {
+        display: none;
+      }
     }
 
     .left-enter.left-enter-active {
       opacity: 1;
       left: $level2-left;
-      height: $level2-height;
-      width: $level2-width;
-      margin-top: 25px;
       transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s,
         line-height 1s;
     }
@@ -156,17 +198,11 @@ $level2-left: -7vw;
     .left-leave {
       opacity: 1;
       left: $level-2-left;
-      height: $level2-height;
-      width: $level2-width;
-      margin-top: 25px;
     }
 
     .left-leave.left-leave-active {
       left: $level-2-left + $level2-width + 20;
       opacity: 0;
-      height: $level2-height - 30;
-      margin-top: 40px;
-      width: $level2-width - 20;
       transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s,
         line-height 1s;
     }
@@ -174,35 +210,23 @@ $level2-left: -7vw;
     .right-enter {
       opacity: 0;
       left: $level-2-left + $level2-width;
-      height: $level2-height - 30;
-      width: $level2-width - 20;
-      margin-top: 40px;
     }
 
     .right-enter.right-enter-active {
       left: $level-2-left;
       opacity: 1;
-      height: $level2-height;
-      margin-top: 25px;
-      width: $level2-width;
       transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s,
         line-height 1s;
     }
 
     .right-leave {
       left: $level2-left;
-      height: $level2-height;
       opacity: 1;
-      margin-top: 25px;
-      width: $level2-width;
     }
 
     .right-leave.right-leave-active {
       left: $level2-left - $level2-width;
       opacity: 0;
-      height: $level2-height - 30;
-      width: $level2-width - 20;
-      margin-top: 40px;
       transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s,
         line-height 1s;
     }

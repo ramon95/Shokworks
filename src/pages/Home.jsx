@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from "react";
+import Fetch from "../Api/Fetch";
+import NotFound from "./Error.jsx";
+import Loading from "./pageLoding";
 import Card from "../components/Card.jsx";
 import "../assets/styles/pages/Home.scss";
 import City from "../assets/images/city.png";
 import Button from "../components/Button.jsx";
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
+import Carousel from "../components/Carousel.jsx";
+import Carousel2 from "../components/Carousel2.jsx";
 import Client1 from "../assets/images/client1.png";
 import Client2 from "../assets/images/client2.png";
 import Client3 from "../assets/images/client3.png";
@@ -13,16 +18,13 @@ import Client5 from "../assets/images/client5.png";
 import Client6 from "../assets/images/client6.png";
 import Security from "../assets/images/secuirty.png";
 import CellPhone from "../assets/images/cellPhone.png";
-import Carousel from "../components/Carousel.jsx";
-import Fetch from "../Api/Fetch";
-import NotFound from "./Error.jsx";
-import Loading from "./pageLoding";
 
 const Home = () => {
   let [state, setState] = useState({
     loading: true,
     error: null,
     items: [],
+    clients: [],
   });
 
   useEffect(() => {
@@ -36,11 +38,18 @@ const Home = () => {
       "http://newsapi.org/v2/everything?q=bitcoin&from=2020-05-11&sortBy=publishedAt&apiKey=fdb647bffc1943cab06868ba0a927a40",
       null
     );
+
+    const [response2, error2] = await Fetch(
+      "GET",
+      "https://jsonplaceholder.typicode.com/posts",
+      null
+    );
     if (!error) {
       setState({
         ...state,
         loading: false,
         items: response.articles,
+        clients: response2,
       });
     } else {
       setState({
@@ -109,12 +118,12 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {/* component Speciality */}
+      {/* component Speciality and carousel*/}
       <div className="speciality__title">
         <h1 className="Regular">What is the </h1>
         <h1 className="SemiBold">Speciality Of Us?</h1>
       </div>
-      <Carousel items={state.items} active={0} />
+      {state.items ? <Carousel items={state.items} active={0} /> : ""}
       {/* component clients */}
       <div className="clients">
         <h1>Our Partnes & Clients</h1>
@@ -127,6 +136,13 @@ const Home = () => {
           <Card img={Client6} title="GOOD TIMES" />
         </div>
       </div>
+      {/* component client say */}
+      <div className="clients_say__title">
+        <h1>
+          What Our <strong>Client Says?</strong>
+        </h1>
+      </div>
+      {state.clients ? <Carousel2 items={state.clients} active={0} /> : ""}
       {/* component form */}
       <div className="form__container">
         <div className="title">

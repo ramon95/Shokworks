@@ -1,5 +1,4 @@
 import React from "react";
-import img from "../assets/images/icon-1.png";
 
 const CarouselItem = ({ level, item }) => {
   console.log(item);
