@@ -1,8 +1,6 @@
 import React from "react";
 
 const CarouselItem = ({ level, item }) => {
-  console.log(item);
-
   return (
     <div className={`item level${level}`}>
       <img src={item.urlToImage} alt="img" className="item__img" />

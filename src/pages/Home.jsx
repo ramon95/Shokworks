@@ -25,6 +25,13 @@ const Home = () => {
     error: null,
     items: [],
     clients: [],
+    form: {
+      FirstName: "",
+      LastName: "",
+      Email: "",
+      Facing: "",
+      message: "",
+    },
   });
 
   useEffect(() => {
@@ -56,6 +63,45 @@ const Home = () => {
         ...state,
         loading: false,
         error: error,
+      });
+    }
+  };
+
+  const handleChange = (e) => {
+    setState({
+      ...state,
+      form: {
+        ...state.form,
+        [e.target.name]: e.target.value,
+      },
+    });
+  };
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    setState({ ...state, loading: true });
+    var json = {
+      title: `${state.form.FirstName} ${state.form.LastName}`,
+      body: state.form.message,
+    };
+    // type, endpoint, body
+    const [response3, error3] = await Fetch(
+      "POST",
+      "https://jsonplaceholder.typicode.com/posts",
+      json
+    );
+    if (!error3) {
+      const newClient = state.clients;
+      newClient.unshift(response3);
+      setState({
+        ...state,
+        loading: false,
+        clients: newClient,
+      });
+    } else {
+      setState({
+        ...state,
+        loading: false,
       });
     }
   };
@@ -152,36 +198,58 @@ const Home = () => {
           </h1>
         </div>
         <div className="form">
-          <div className="input_double">
-            <div className="group">
-              <label>First Name</label>
-              <input type="text" placeholder="Robert Lee" />
+          <form onSubmit={onSubmit}>
+            <div className="input_double">
+              <div className="group">
+                <label>First Name</label>
+                <input
+                  type="text"
+                  placeholder="Robert Lee"
+                  onChange={handleChange}
+                  name="FirstName"
+                />
+              </div>
+              <div className="group">
+                <label>Last Name</label>
+                <input
+                  type="text"
+                  placeholder="Anderson"
+                  onChange={handleChange}
+                  name="LastName"
+                />
+              </div>
             </div>
             <div className="group">
-              <label>Last Name</label>
-              <input type="text" placeholder="Anderson" />
+              <label>Your Email Adress</label>
+              <input
+                type="email"
+                placeholder="kevin.jones@gmail.com"
+                onChange={handleChange}
+                name="Email"
+              />
             </div>
-          </div>
-          <div className="group">
-            <label>Your Email Adress</label>
-            <input type="email" placeholder="kevin.jones@gmail.com" />
-          </div>
-          <div className="group">
-            <label>Which Related Problem You Are Facing?</label>
-            <select>
-              <option>Select One</option>
-              <option defaultValue="1">Option 1</option>
-              <option defaultValue="2">Option 2</option>
-              <option defaultValue="3">Option 3</option>
-            </select>
-          </div>
-          <div className="group">
-            <label>Type Your Message</label>
-            <textarea rows="3" placeholder="Here goes your message"></textarea>
-          </div>
-          <div className="button">
-            <Button message="Our Works" />
-          </div>
+            <div className="group">
+              <label>Which Related Problem You Are Facing?</label>
+              <select onChange={handleChange} name="Facing">
+                <option>Select One</option>
+                <option defaultValue="1">Option 1</option>
+                <option defaultValue="2">Option 2</option>
+                <option defaultValue="3">Option 3</option>
+              </select>
+            </div>
+            <div className="group">
+              <label>Type Your Message</label>
+              <textarea
+                rows="3"
+                placeholder="Here goes your message"
+                onChange={handleChange}
+                name="message"
+              ></textarea>
+            </div>
+            <div className="button">
+              <Button message="Our Works" type="submit" />
+            </div>
+          </form>
         </div>
       </div>
       {/* component footer */}

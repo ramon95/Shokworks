@@ -6,8 +6,6 @@ import Img3 from "../assets/images/Ellipse3.png";
 import Img4 from "../assets/images/Ellipse4.png";
 
 const CarouselItem2 = ({ level, item, img }) => {
-  console.log(img);
-
   return (
     <div className={`item level${level}`}>
       {img === 0 ? (
